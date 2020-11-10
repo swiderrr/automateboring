@@ -13,8 +13,8 @@ for folderName, subfolders, filenames in os.walk('H:\Programowanie\Python'):
         nowaNazwa = ''.join(match)
         print(nowaNazwa)
         
-        nowaSciezka = folderName + '\\' + nowaNazwa
-        staraSciezka = folderName + '\\' + staraNazwa
+        nowaSciezka = folderName + '\\' + nowaNazwa         #tutaj wiem, że sposobów lepszego zapisania jest więcej, chociażby pobierająć path.basename
+        staraSciezka = folderName + '\\' + staraNazwa 
         shutil.move(staraSciezka, nowaSciezka)
     
  
