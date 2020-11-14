@@ -3,7 +3,7 @@ import re, os, shutil
 def sortName(folder, prefix):
 
     prefix = input()
-    folder = os.path.abspath('H:\Programowanie\Python\Zadania Python\PREFIX')
+    folder = os.path.abspath(folder)
     prefixRegex = re.compile(r'(^{}\d\d\d(.txt)$)'.format(prefix))
     gaps = []
     fills = []
@@ -13,9 +13,10 @@ def sortName(folder, prefix):
     gaps.sort()
     for i in range(len(gaps)):
         fills.append('{}{:0>3}.txt'.format(prefix, i+1))
-        shutil.move(f'{folder}\\{gaps[i]}', f'{folder}\\{fills[i]}')
-
-
+        if gaps[i] != fills[i]:
+            shutil.move(f'{folder}\\{gaps[i]}', f'{folder}\\{fills[i]}')
+     
+        
 
 sortName('H:\Programowanie\Python\Zadania Python\PREFIX', 'spam')
     
