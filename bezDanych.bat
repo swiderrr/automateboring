@@ -1,1 +1,0 @@
-@py.exe H:\Programowanie\Python\bezDanych.py %*
